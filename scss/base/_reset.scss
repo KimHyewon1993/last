@@ -1,0 +1,13 @@
+*{margin:0;padding:0;font:inherit;color:inherit;}
+*, :after, :before {box-sizing:border-box;}
+html, body {height:100%;}
+img, picture, video, canvas, svg {display: block;max-width:100%;}
+a {text-decoration:none}
+table {border-collapse:collapse;border-spacing:0}
+ul, ol {list-style: none;}
+
+body {
+    font-family: $font-gil;
+    line-height: 1.2;
+    background: #fcfaf8;
+}

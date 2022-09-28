@@ -1,0 +1,51 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    padding: 0 5vw;
+    z-index: 100;
+    @include mobile {
+        padding: 0 7vw;
+        height: 100px;
+    }
+    .gnb {
+        width: 100%;
+        height: 100%;
+    }
+    .gnb-list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+    }
+    .gnb-item {
+        &.mobile {
+            @include mobile {
+                display: none;
+            }
+        }
+    }
+    .link-gnb {
+        position: relative;
+        font-size: 12px;
+        color: #383838;
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: #383838;
+            @include mobile {
+                background: #fff;
+            }
+        }
+        @include mobile {
+            color: #fff;
+        }
+    }
+}
