@@ -1,4 +1,5 @@
 $(function(){
+
 // loading-page ------------------------------------------
     gsap.set('.loading-page .t01',{xPercent:20})
     gsap.set('.loading-page .t02',{xPercent:200,opacity:0})
@@ -25,13 +26,20 @@ $(function(){
     })
 // -----------------------------------------------------------------
 
+    $('.header .gnb-item').click(function(){
+        let i = $(this).index();
+        let offTop = $('.scroll').eq(i).offset().top;
+        
+        $('html, body').stop().animate({scrollTop : offTop})
+    })
+
     gsap.set('.sc-create .group-title .text',{yPercent:100})
     gsap.set('.sc-create .desc',{yPercent:100})
-    gsap.set('.sc-create .visual',{opacity:0})
+    gsap.set('.sc-create .green-line',{width:0})
     gsap.set('.sc-create .left-area .desc',{yPercent:100,opacity:0})
     gsap.to('.sc-create .group-title .text',{yPercent:0,delay:1.4})
     gsap.to('.sc-create .desc',{yPercent:0,delay:2})
-    gsap.to('.sc-create .visual',{opacity:1,delay:2,duration:1})
+    gsap.to('.sc-create .green-line',{width:'20vw',delay:2,duration:1})
 
     gsap.to('.sc-create .left-area .desc',{
         scrollTrigger: {
@@ -55,21 +63,46 @@ $(function(){
         yPercent:0,
     })
 
+    
+
+    $('.sc-works .link-book').mouseover(function(){
+        $(this).addClass('active')
+    })
+    $('.sc-works .link-book').mouseleave(function(){
+        $(this).removeClass('active')
+    })
+
+    // var motion = gsap.timeline({paused:true})
+
+    // motion.from('.sc-works .hide-box .desc',{yPercent:-50,opacity:0,stagger:0.1})
+    // motion.to('.sc-works .hide-box .desc',{yPercent:0,opacity:1,stagger:1})
+
+    // gsap.set('.sc-works .hide-box .desc',{yPercent:-100,opacity:0})
+    // $('.sc-works .img-area').mouseover(function(){
+    //     motion.play();
+    // })
+    // $('.sc-works .img-area').mouseleave(function(){
+    //     motion.reverse();
+    // }) 
+    //해당하는 각각의 값을 적용해야함
+
     ScrollTrigger.matchMedia({
         "(min-width: 767px)": function() {
 
-            gsap.to('.sc-create .right-area .img-box',{
-                scrollTrigger: {
-                    trigger:".sc-create",
-                    start: `top top`,
-                    end: "bottom top",
-                    scrub: 1,
-                },
-                rotation:10,
+            $('[data-rotate]').each(function(index,item){
+                y = $(this).data('rotate');
+                gsap.to(item,{
+                    scrollTrigger: {
+                        trigger:'sc-create',
+                        start: `top top`,
+                        end: "bottom top",
+                        scrub: 1,
+                    },
+                    rotation:y,
+                })
             })
 
             $('[data-obj]').each(function(index,item){
-                y = $(this).data('obj');
                 gsap.to(item,{
                     scrollTrigger: {
                         trigger:item,
@@ -93,39 +126,64 @@ $(function(){
                     yPercent: y
                 })
             })
+
+            $('[data-color]').mouseover(function(){
+                color = $(this).data('color');
+                $('.sc-works').css('background-color',color)
+            })
+            $('[data-color]').mouseleave(function(){
+                $('.sc-works').css('background-color','#f2f2f2')
+            })
+
+            gsap.set('.sc-honors .tit',{yPercent:100,opacity:0})
+            gsap.to('.sc-honors .tit',{
+                scrollTrigger: {
+                    trigger:'.sc-honors',
+                    start: `top bottom`,
+                    end: "50% top",
+                    scrub: 1,
+                },
+                yPercent:0,
+                opacity:1
+            })
         }
     })
 
-    gsap.set('.sc-honors .tit',{yPercent:100,opacity:0})
-    gsap.to('.sc-honors .tit',{
+    ScrollTrigger.matchMedia({
+        "(max-width: 767px)": function() {
+
+            gsap.set('.sc-honors .tit',{yPercent:100,opacity:0})
+            gsap.to('.sc-honors .tit',{
+                scrollTrigger: {
+                    trigger:'.sc-honors',
+                    start: `top bottom`,
+                    end: "10% top",
+                    scrub: 1,
+                },
+                yPercent:0,
+                opacity:1
+            })
+
+            $('[data-color]').mouseover(function(){
+                color = $(this).data('color');
+                $('.sc-works').css('background-color',color)
+            })
+            $('[data-color]').mouseleave(function(){
+                $('.sc-works').css('background-color','#282828')
+            })
+        }
+    })
+
+    gsap.set('.sc-honors .title .text',{yPercent:100})
+    gsap.to('.sc-honors .title .text',{
         scrollTrigger: {
-            trigger:'.sc-honors',
+            trigger:'.sc-honors .group-title',
             start: `top bottom`,
-            end: "50% top",
+            end: "bottom bottom",
             scrub: 1,
         },
-        yPercent:0,
-        opacity:1
+        yPercent:0
     })
-    gsap.set('.sc-honors .link-honors',{xPercent:-100,opacity:0})
-    gsap.to('.sc-honors .link-honors',{
-        scrollTrigger: {
-            trigger:'.sc-honors',
-            start: `top bottom`,
-            end: "top top",
-            scrub: 1,
-        },
-        xPercent:0,
-        opacity:1,
-    })
-
-    $('[data-color]').hover(function(){
-        color = $(this).data('color');
-        $('.sc-works').css('background-color',color)
-    })
-    
-
-
 
     
 });

@@ -26,6 +26,9 @@
         overflow: hidden;
         font-size: 80px;
         line-height: 130%;
+        @include mobile {
+            font-size: 40px;
+        }
         .text {
             color: #fff;
             &.margin {
@@ -67,7 +70,7 @@
         position: relative;
         padding: 24vh 5vw 0;
         @include mobile {
-            padding: 16vh 0 0 7vw;
+            padding: 16vh 0 0 5vw;
         }
         .text-box {
             display: flex;
@@ -79,39 +82,25 @@
                 letter-spacing: -4px;
                 color: #fff;
             }
-            .visual {
-                &.mobile {
-                    @include mobile {
-                        display: flex;
-                        align-items: center;
-                        justify-content: end;
-                    }
-                }
-            }
-            .mobile-line {
-                @include mobile {
-                    display: inline-block;
-                    width: 15vw;
-                    height: 6px;
-                    margin-right: 3vw;
-                    background: #14cf93;
-                }
-            }
             &.bottom {
-                display: flex;
                 justify-content: end;
-                align-items: center;
                 @include mobile {
-                    display: block;
+                    justify-content: start;
                 }
             }
         }
-        svg#Visual {
-            width: 24vw;
-            margin-right: 10px;
+        .green-line {
+            display: inline-block;
+            position: absolute;
+            top: 80vh;
+            left: 11vw;
+            width: 22vw;
+            height: 6px;
+            background: #14cf93;
             @include mobile {
-                width: 35vw;
-                margin-right: 4vw;
+                top: 30vh;
+                left: auto;
+                right: 0;
             }
         }
     }
@@ -133,7 +122,7 @@
         top: 30vh;
         right: 10vw;
         @include mobile {
-            top: 58vh;
+            top: 50vh;
             left: 7vw;
         }
         .desc-box {
@@ -164,7 +153,7 @@
         }
     }
     .left-area {
-        width: 30%;
+        width: 40%;
         padding: 30vh 0;
         @include mobile {
             width: 100%;
@@ -183,20 +172,17 @@
         .text {
             display: flex;
             overflow: hidden;
-            font-size: 2.2vw;
+            font-size: 2vw;
             color: #414141;
-        }
-        .desc {
-            display: block;
+            line-height: 1.35;
             @include mobile {
-                display: inline-block;
-                font-size: 31px;
+                font-size: 25px;
+                font-family: $font-kr;
                 color: #fff;
                 padding-left: 2vw;
             }
         }
         .point {
-            font-family: $font-ma;
             color: #14cf93;
         }
         .link-contact {
@@ -369,7 +355,14 @@
                 line-height: 1;
                 font-size: 9vw;
                 @include mobile {
-                    display: none;
+                    // display: none;
+                    font-size: 15vw;
+                    color: #fff;
+                }
+            }
+            .txt {
+                @include mobile {
+                    margin: 80px 0 0 30px;
                 }
             }
         }
@@ -380,26 +373,8 @@
         .num {
             color: #414141;
             font-size: 1.2vw;
-        }
-        .mobile-box {
-            display: none;
             @include mobile {
-                display: block;
-                position: relative;
-                width: 100%;
-            }
-            .mtxt {
-                @include mobile {
-                    display: block;
-                    color: #fff;
-                    font-size: 15vw;
-                    line-height: 90%;
-                }
-                &.m02 {
-                    @include mobile {
-                        text-align: right;
-                    }
-                }
+                display: none;
             }
         }
         .arrow-ico {
@@ -424,7 +399,7 @@
     .group-contents {
         position: relative;
         width: 100%;
-        height: 167vw;
+        height: 100vw;
         padding: 0 5vw;
         @include mobile {
             position: static;
@@ -462,23 +437,9 @@
                     margin-bottom: 50px;
                 }
             }
-            &.img-area03 {
-                width: 60%;
-                height: 50vw;
-                top: 52vw;
-                left: 20vw;
-                margin: 0 auto;
-                @include mobile {
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 50vh;
-                    margin-bottom: 50px;
-                }
-            }
             &.img-area04 {
                 width: 30%;
-                bottom: 0;
+                top: 80vw;
                 left: 5vw;
                 height: 30vw;
                 @include mobile {
@@ -489,7 +450,7 @@
                 }
             }
             &.img-area05 {
-                bottom: 10vw;
+                top: 52vw;
                 right: 5vw;
                 width: 53%;
                 height: 45vw;
@@ -584,7 +545,7 @@
             padding-bottom: 10%;
             @include mobile {
                 width: max-content;
-                margin: 0 auto;
+                margin-left: 7vw;
                 padding: 15vw 0 20vw;
             }
         }
@@ -642,10 +603,15 @@
             font-size: 20px;
             color: #414141;
             padding: 24px;
+            transition: 0.5s;
             .i {font-family: $font-ma;}
             @include mobile {
                 color: #fff;
                 margin-bottom: 50px;
+            }
+            &.active {
+                background: #fff;
+                color: #000;
             }
         }
         .line-bg {
@@ -683,7 +649,12 @@
             display: block;
             padding-bottom: 60px;
         }
+        .title {
+            display: flex;
+            overflow: hidden;
+        }
         .text {
+            display: block;
             color: #383838;
             line-height: 1;
             font-size: 9vw;
@@ -756,7 +727,7 @@
             color: #a2a2a2;
         }
         .text {
-            font-size: 25px;
+            font-size: 20px;
             color: #414141;
             padding-bottom: 20px;
             font-weight: 500;
@@ -772,9 +743,6 @@
             padding-top: 20px;
             font-size: 12px;
             color: #a2a2a2;
-            @include mobile {
-                width: 80%;
-            }
         }
     }
     .right-area {
@@ -784,7 +752,6 @@
             margin-bottom: 100px;
         }
     }
-    .list-honors {}
     .item-honors {
         display: flex;
         align-items: center;
@@ -792,53 +759,30 @@
         padding: 30px 0;
         border-bottom: 1px solid rgba(65,65,65,.3);
         .desc {
-            font-size: 10px;
+            font-size: 15px;
+            letter-spacing: 1px;
             color: #a2a2a2;
         }
         .i {font-family: $font-ma;font-weight: 500;}
         .text-box {
             display: flex;
             overflow: hidden;
-            margin-left: -8vw;
-            width: 20vw;
+            width: 85%;
+            justify-content: end;
+            margin-right: 20px;
             @include mobile {
-                width: 50vw;
+                width: 80%;
             }
         }
         .tit {
-            font-size: 30px;
+            font-size: 17px;
             font-weight: 500;
+            font-family: $font-kr;
+            line-height: 1.5;
             color: #414141;
             @include mobile {
-                font-size: 22px;
+                font-size: 15px;
                 color: #fff;
-                width: 200px;
-                margin-left: 50px;
-            }
-        }
-        .arrow-box {
-            display: flex;
-            overflow: hidden;
-        }
-        .link-honors {
-            position: relative;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: #414141;
-            transition: transform 0.2s;
-            @include mobile {
-                background: #fff;
-            }
-            &:hover {
-                transform: rotate(-45deg);
-            }
-            img {
-                @include positionCenter;
-                filter: invert(1);
-                @include mobile {
-                    filter: invert(0);
-                }
             }
         }
     }
