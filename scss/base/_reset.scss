@@ -10,4 +10,8 @@ body {
     font-family: $font-gil;
     line-height: 1.2;
     background: #fcfaf8;
+    overflow: overlay;
+    &.hidden {
+        overflow: hidden;
+    }
 }

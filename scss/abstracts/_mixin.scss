@@ -5,23 +5,32 @@
     transform: translate(-50%, -50%);
 }
 
-/*반응형, 브라우저 크기가 767px 이하일때*/
 @mixin mobile{
   @media (max-width: $mobile){
     @content;
   }
 }
 
-/*반응형, 브라우저 크기가 768이상, 1023px 이하일때*/
 @mixin tablet{
   @media (max-width: $tablet){
     @content;
   }
 }
 
-/*반응형, 브라우저 크기가 1024px 이상일때*/
 @mixin desktop{
   @media (max-width: $desktop){
     @content;
+  }
+}
+
+@mixin animation ($delay, $duration, $name) {
+  animation-delay: $delay;
+  animation-duration: $duration;
+  animation-name: $name
+}
+
+@mixin keyframe ($animation_name) {
+  @keyframes #{$animation_name} {
+      @content;
   }
 }
