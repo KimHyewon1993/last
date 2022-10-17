@@ -22,7 +22,7 @@
 }
 
 .point {
-  font-family: "Mazius", sans-serif;
+  font-family: "MonoplexKR-Italic", sans-serif;
   color: #14cf93;
 }
 
@@ -99,9 +99,10 @@ body.hidden {
   font-weight: 500;
 }
 @font-face {
-  font-family: "Mazius";
-  src: url(../../font/Kalam-Regular.ttf) format("truetype");
-  font-weight: normal;
+  font-family: "MonoplexKR-Italic";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Italic.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
 }
 @font-face {
   font-family: "Pretendard-Regular";
@@ -547,7 +548,7 @@ body.hidden {
   color: #a2a2a2;
 }
 .sc-create .sub-title .i {
-  font-family: "Mazius", sans-serif;
+  font-family: "MonoplexKR-Italic", sans-serif;
 }
 .sc-create .group-info {
   padding-top: 15vw;
@@ -1125,7 +1126,7 @@ body.hidden {
   transition: background-color 0.5s;
 }
 .sc-works .group-bottom .link-book .i {
-  font-family: "Mazius", sans-serif;
+  font-family: "MonoplexKR-Italic", sans-serif;
 }
 @media (max-width: 767px) {
   .sc-works .group-bottom .link-book {
@@ -1190,7 +1191,7 @@ body.hidden {
   color: #a2a2a2;
 }
 .sc-develop .group-title .sub-title .i {
-  font-family: "Mazius", sans-serif;
+  font-family: "MonoplexKR-Italic", sans-serif;
 }
 .sc-develop .group-title .arrow-ico {
   position: absolute;
@@ -1295,7 +1296,7 @@ body.hidden {
   color: #a2a2a2;
 }
 .sc-develop .develop-item .i {
-  font-family: "Mazius", sans-serif;
+  font-family: "MonoplexKR-Italic", sans-serif;
   font-weight: 500;
 }
 .sc-develop .develop-item .text-box {

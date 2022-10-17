@@ -192,15 +192,6 @@ $(function(){
                 opacity:1
             })
 
-            gsap.set('.sc-works .hide-box .desc',{yPercent:0,opacity:1})
-            $('[data-color]').mouseover(function(){
-                color = $(this).data('color');
-                $('.sc-works').css('background-color',color)
-            })
-            $('[data-color]').mouseleave(function(){
-                find = $(this).find('.hide-box .desc');
-                $('.sc-works').css('background-color','#282828')
-            })
         }
     })
 

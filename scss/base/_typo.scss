@@ -8,10 +8,16 @@
     src: url(../../font/Gilroy-SemiBold.ttf) format('truetype');
     font-weight: 500;
 }
+// @font-face {
+//     font-family: 'Kalam';
+//     src: url(../../font/Kalam-Regular.ttf) format('truetype');
+//     font-weight: normal;
+// }
 @font-face {
-    font-family: 'Mazius';
-    src: url(../../font/Kalam-Regular.ttf) format('truetype');
-    font-weight: normal;
+    font-family: 'MonoplexKR-Italic';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_Monoplex-kr@1.0/MonoplexKR-Italic.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
 }
 @font-face {
     font-family: 'Pretendard-Regular';
