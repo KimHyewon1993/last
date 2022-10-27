@@ -59,11 +59,14 @@
             .link-sns {
                 padding: 14px 18px;
                 @include mobile {
-                    padding: 25px 20px;
+                    padding: 25px 0;
                 }
             }
             .color-box {
                 height: 100%;
+                @include mobile {
+                    height: 0;
+                }
             }
         }
         @include mobile {

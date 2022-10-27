@@ -175,7 +175,7 @@
             color: #414141;
             @include mobile {
                 padding-left: 2vw;
-                font-size: 25px;
+                font-size: 6vw;
                 color: #fff;
             }
         }
@@ -287,7 +287,7 @@
         .text-box {
             padding: 15vw 0 10vw 13vw;
             @include mobile {
-                padding: 40vw 0 20vw 0;
+                padding: 47vw 0 20vw 0;
             }
         }
         .desc {
@@ -643,9 +643,13 @@
                 margin-bottom: 50px;
                 color: #fff;
             }
-            &.active {
+            &:hover {
                 background: #fff;
                 color: #000;
+                @include mobile {
+                    background: transparent;
+                    color: #fff;
+                }
             }
         }
     }
@@ -775,6 +779,9 @@
         justify-content: space-between;
         padding: 30px 0;
         border-bottom: 1px solid rgba(65,65,65,.3);
+        @include mobile {
+            flex-direction: column;
+        }
         .desc {
             font-size: 15px;
             letter-spacing: 1px;
@@ -788,7 +795,8 @@
             margin-right: 20px;
             overflow: hidden;
             @include mobile {
-                width: 80%;
+                width: 90%;
+                margin: 10px auto 0;
             }
         }
         .tit {

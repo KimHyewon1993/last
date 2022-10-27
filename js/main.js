@@ -54,13 +54,6 @@ $(function(){
         yPercent:0,
     })
 
-    $('.sc-works .link-book').mouseover(function(){
-        $(this).addClass('active')
-    })
-    $('.sc-works .link-book').mouseleave(function(){
-        $(this).removeClass('active')
-    })
-
     gsap.set('.sc-develop .title .text',{yPercent:100})
     gsap.to('.sc-develop .title .text',{
         scrollTrigger: {
@@ -172,7 +165,7 @@ $(function(){
             gsap.to('.sc-create .left-area .desc',{
                 scrollTrigger: {
                     trigger:".sc-create .group-info",
-                    start: `40% top`,
+                    start: `25% top`,
                     end: "50% top",
                     scrub: 1,
                 },
