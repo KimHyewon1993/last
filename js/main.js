@@ -180,6 +180,11 @@ $(function(){
                 opacity:1,
             })
 
+            gsap.set('.sc-works',{backgroundColor:'#282828'})
+            $('[data-color]').mouseleave(function(){
+                $('.sc-works').css('background-color','#282828')
+            })
+
             gsap.set('.sc-develop .tit',{yPercent:100,opacity:0})
             gsap.to('.sc-develop .tit',{
                 scrollTrigger: {
